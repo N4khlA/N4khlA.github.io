@@ -12,7 +12,7 @@
 
   // Cover: animate name + stamp, then declassify the redacted words one by one
   const cover = document.querySelector('.cover');
-  requestAnimationFrame(() => cover.classList.add('is-in'));
+  setTimeout(() => cover.classList.add('is-in'), 30);
   const bars = [...document.querySelectorAll('.redact')];
   bars.forEach((el, i) => setTimeout(() => el.classList.add('is-out'), reduce ? 0 : 1100 + i * 380));
 
