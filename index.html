@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guerfi Ahmed Yacine — Security Engineer</title>
+  <meta name="description" content="Final-year cyber security engineering student at ESI Sidi Bel Abbès. Offensive labs, ML intrusion detection, mobile AppSec. Open to internships.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#findings">Skip to findings</a>
+  <div class="margin-rule" aria-hidden="true"></div>
+
+  <header class="bar">
+    <div class="bar__in">
+      <a class="bar__id" href="#top">SEC-ASSESSMENT <span>//</span> GUERFI-A-Y</a>
+      <p class="bar__where" aria-live="polite"><span class="bar__sec">§00</span> <span class="bar__name">Cover</span></p>
+      <nav class="bar__nav" aria-label="Report sections">
+        <a href="#summary">Summary</a>
+        <a href="#findings">Findings</a>
+        <a href="#matrix">Matrix</a>
+        <a href="#record">Record</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme" type="button" aria-label="Toggle colour theme">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- COVER -->
+    <section class="cover" data-sec="§00" data-name="Cover">
+      <div class="cover__meta mono">
+        <span>Report No. GAY-2026-001</span>
+        <span>Rev. 2026.10</span>
+        <span>Classification: <b>Public</b></span>
+      </div>
+
+      <h1 class="cover__name">
+        <span class="ln">Guerfi</span>
+        <span class="ln">Ahmed</span>
+        <span class="ln ln--accent">Yacine<span class="dot">.</span></span>
+      </h1>
+
+      <div class="stamp" aria-label="Status: available for internship">
+        <span class="stamp__top">Status</span>
+        <span class="stamp__main">Available</span>
+        <span class="stamp__bot">Internship · 2026–27</span>
+      </div>
+
+      <div class="cover__grid">
+        <p class="cover__lede">
+          Final-year <span class="redact">cyber security</span> engineering student who
+          <span class="redact">breaks systems on purpose</span> to learn exactly how to
+          <span class="redact">detect and defend them</span>.
+        </p>
+
+        <dl class="sheet">
+          <div><dt>Subject</dt><dd>Guerfi Ahmed Yacine</dd></div>
+          <div><dt>Institution</dt><dd>ESI Sidi Bel Abbès (ESI-SBA)</dd></div>
+          <div><dt>Programme</dt><dd>Engineering degree, Cyber Security + Master’s</dd></div>
+          <div><dt>Graduation</dt><dd>Expected 2027</dd></div>
+          <div><dt>Scope sought</dt><dd>Pentest · AppSec · SOC / Detection</dd></div>
+        </dl>
+      </div>
+
+      <a class="cover__next mono" href="#summary">Begin report <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- 01 SUMMARY -->
+    <section id="summary" class="sec" data-sec="§01" data-name="Executive summary">
+      <header class="sec__head">
+        <span class="sec__no mono">§01</span>
+        <h2>Executive summary</h2>
+      </header>
+
+      <div class="summary">
+        <blockquote class="pull">
+          “I don’t write about vulnerabilities. I build the vulnerable system, exploit it, instrument it, and then prove the fix works.”
+        </blockquote>
+
+        <div class="verdict">
+          <p class="mono verdict__k">Assessor’s verdict</p>
+          <p class="verdict__v">Recommended for hire</p>
+          <div class="meter" role="img" aria-label="Rating: high">
+            <span></span><span></span><span></span><span></span><span class="off"></span>
+          </div>
+          <ul class="kpis">
+            <li><b class="mono">3</b><span>end-to-end security tools shipped</span></li>
+            <li><b class="mono">5</b><span>race-condition bugs built, exploited and patched</span></li>
+            <li><b class="mono">49</b><span>automated tests on the ML detection pipeline</span></li>
+            <li><b class="mono">M1–M10</b><span>OWASP Mobile categories covered by my scanner</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 FINDINGS -->
+    <section id="findings" class="sec" data-sec="§02" data-name="Findings">
+      <header class="sec__head">
+        <span class="sec__no mono">§02</span>
+        <h2>Findings</h2>
+        <p class="sec__note">Each finding is a shipped project. Evidence comes from each repository’s own benchmarks and tests.</p>
+      </header>
+
+      <article class="finding reveal">
+        <div class="finding__id" aria-hidden="true">F‑01</div>
+        <div class="finding__main">
+          <div class="chips mono">
+            <span class="chip chip--sev">Impact · High</span>
+            <span class="chip">Offensive / Web</span>
+            <span class="chip chip--ok">Status · Shipped</span>
+          </div>
+          <h3><a href="https://github.com/N4khlA/Race_condition_exploiter" rel="noopener">Race Condition Exploiter</a></h3>
+          <p class="finding__desc">A full-stack TOCTOU lab. It is a deliberately vulnerable shop with five real race bugs: double-spend wallet transfers, coupon reuse, overselling stock, duplicate signups and password-reset token reuse. Each one can be exploited, detected and fixed from the same live dashboard.</p>
+
+          <div class="cols">
+            <div>
+              <h4 class="mono">Technique</h4>
+              <ul class="ticks">
+                <li>Four concurrency strategies: asyncio, barrier-synced threads, raw TCP sockets, HTTP/2 multiplexing</li>
+                <li>Microsecond-level request staggering to find the race window</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mono">Detection &amp; fix</h4>
+              <ul class="ticks">
+                <li>PostgreSQL invariant triggers streamed via <code>LISTEN/NOTIFY</code>, burst fingerprinting</li>
+                <li>CAS, row locks, serializable and Redis locks, each benchmarked for exploit rate against latency</li>
+              </ul>
+            </div>
+          </div>
+          <p class="stack mono">FastAPI · PostgreSQL · Redis · React/TS · WebSocket · Docker</p>
+        </div>
+        <dl class="evidence">
+          <div><dt class="mono">5</dt><dd>vulnerabilities</dd></div>
+          <div><dt class="mono">4</dt><dd>attack strategies</dd></div>
+          <div><dt class="mono">7</dt><dd>guided labs</dd></div>
+        </dl>
+      </article>
+
+      <article class="finding reveal">
+        <div class="finding__id" aria-hidden="true">F‑02</div>
+        <div class="finding__main">
+          <div class="chips mono">
+            <span class="chip chip--sev">Impact · High</span>
+            <span class="chip">Defensive / ML</span>
+            <span class="chip chip--ok">Status · Shipped</span>
+          </div>
+          <h3><a href="https://github.com/N4khlA/AI-_threat_hunting" rel="noopener">ML Network Intrusion Detection</a></h3>
+          <p class="finding__desc">Detects DoS, scans, exploits, fuzzing and botnet traffic in UNSW-NB15 flow records. Predictions are served through a REST API and monitored on a live dashboard, and the retraining pipeline refuses to replace the current model with a worse one.</p>
+
+          <div class="cols">
+            <div>
+              <h4 class="mono">Method</h4>
+              <ul class="ticks">
+                <li>Random Forest (per flow) compared with a bidirectional LSTM (per window)</li>
+                <li>McNemar significance test, which honestly showed the gap was not significant (p = 0.058)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mono">Rigour</h4>
+              <ul class="ticks">
+                <li>Leakage scan, per-attack-family recall, documented weak spots</li>
+                <li>Seeded, reproducible pipeline with 49 tests</li>
+              </ul>
+            </div>
+          </div>
+          <p class="stack mono">scikit-learn · TensorFlow · FastAPI · Streamlit · SQLite · pytest</p>
+        </div>
+        <dl class="evidence">
+          <div><dt class="mono">0.948</dt><dd>macro F1 (RF)</dd></div>
+          <div><dt class="mono">0.998</dt><dd>AUC (LSTM)</dd></div>
+          <div><dt class="mono">700k</dt><dd>flows / sec</dd></div>
+        </dl>
+      </article>
+
+      <article class="finding reveal">
+        <div class="finding__id" aria-hidden="true">F‑03</div>
+        <div class="finding__main">
+          <div class="chips mono">
+            <span class="chip chip--sev">Impact · High</span>
+            <span class="chip">AppSec / Mobile</span>
+            <span class="chip chip--ok">Status · Shipped</span>
+          </div>
+          <h3><a href="https://github.com/N4khlA/MobileApp_SecAnalyzer" rel="noopener">masa: Mobile App Security Analyzer</a></h3>
+          <p class="finding__desc">A static scanner for Android APKs and iOS IPAs that maps findings to the OWASP Mobile Top 10 (2023). It uses only the Python standard library, so every binary format parser is hand-written.</p>
+
+          <div class="cols">
+            <div>
+              <h4 class="mono">Under the hood</h4>
+              <ul class="ticks">
+                <li>Parsers for binary AXML, bplist, DEX string tables, ELF and Mach-O</li>
+                <li>Binary hardening checks: PIE, RELRO, executable stack, unsafe libc calls</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mono">Coverage</h4>
+              <ul class="ticks">
+                <li>Secrets, TrustAll managers, ATS bypasses, weak crypto, insecure storage</li>
+                <li>Credits positive controls (Keystore, Keychain, pinning); HTML/MD/JSON reports</li>
+              </ul>
+            </div>
+          </div>
+          <p class="stack mono">Python stdlib · OWASP MASVS · ELF / Mach-O · MIT</p>
+        </div>
+        <dl class="evidence">
+          <div><dt class="mono">10</dt><dd>OWASP categories</dd></div>
+          <div><dt class="mono">2</dt><dd>platforms</dd></div>
+          <div><dt class="mono">0</dt><dd>dependencies</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <!-- 03 MATRIX -->
+    <section id="matrix" class="sec" data-sec="§03" data-name="Capability matrix">
+      <header class="sec__head">
+        <span class="sec__no mono">§03</span>
+        <h2>Capability matrix</h2>
+        <p class="sec__note">Laid out like ATT&amp;CK. <span class="key key--full"></span> used in a shipped project · <span class="key"></span> coursework &amp; labs</p>
+      </header>
+
+      <div class="matrix">
+        <div class="tactic">
+          <h3 class="mono">Recon &amp; analysis</h3>
+          <ul>
+            <li class="on">Binary format parsing</li>
+            <li class="on">Static analysis</li>
+            <li class="on">Traffic &amp; flow analysis</li>
+            <li>Network enumeration</li>
+            <li>Kali Linux tooling</li>
+          </ul>
+        </div>
+        <div class="tactic">
+          <h3 class="mono">Exploitation</h3>
+          <ul>
+            <li class="on">Race conditions / TOCTOU</li>
+            <li class="on">Custom exploit harnesses</li>
+            <li class="on">HTTP/2 &amp; raw-socket attacks</li>
+            <li>Web: injection &amp; auth flaws</li>
+            <li>Ethical hacking labs</li>
+          </ul>
+        </div>
+        <div class="tactic">
+          <h3 class="mono">Detection</h3>
+          <ul>
+            <li class="on">ML intrusion detection</li>
+            <li class="on">DB invariant triggers</li>
+            <li class="on">Request fingerprinting</li>
+            <li class="on">Model drift monitoring</li>
+            <li>Log analysis</li>
+          </ul>
+        </div>
+        <div class="tactic">
+          <h3 class="mono">Hardening</h3>
+          <ul>
+            <li class="on">Concurrency-safe DB fixes</li>
+            <li class="on">OWASP Mobile Top 10</li>
+            <li class="on">ELF / Mach-O hardening</li>
+            <li>OWASP Top 10 (web)</li>
+            <li>Secure code review</li>
+          </ul>
+        </div>
+        <div class="tactic">
+          <h3 class="mono">Engineering</h3>
+          <ul>
+            <li class="on">Python</li>
+            <li class="on">FastAPI · React · TS</li>
+            <li class="on">PostgreSQL · Redis</li>
+            <li class="on">Docker Compose</li>
+            <li class="on">pytest · Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 RECORD -->
+    <section id="record" class="sec" data-sec="§04" data-name="Record">
+      <header class="sec__head">
+        <span class="sec__no mono">§04</span>
+        <h2>Record</h2>
+      </header>
+
+      <ol class="log">
+        <li class="reveal">
+          <time class="mono">2027</time>
+          <div>
+            <h3>Graduation (expected)</h3>
+            <p>State engineering degree in Cyber Security and a Master’s degree from ESI Sidi Bel Abbès.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <time class="mono">2026–27</time>
+          <div>
+            <h3>Final year · Cyber Security track</h3>
+            <p>Ethical hacking labs, offensive and defensive coursework, and the end-of-studies project. <b>Looking for an internship now.</b></p>
+          </div>
+        </li>
+        <li class="reveal">
+          <time class="mono">2026</time>
+          <div>
+            <h3>Shipped three security tools</h3>
+            <p>An exploitation lab, an ML-based NIDS and a mobile static analyser, all open source on GitHub.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <time class="mono">Earlier</time>
+          <div>
+            <h3>Computer science foundations · ESI-SBA</h3>
+            <p>Algorithms, systems, networks, databases and software engineering in the preparatory and core cycles.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 05 CONTACT -->
+    <section id="contact" class="sec contact" data-sec="§05" data-name="Disclosure channel">
+      <header class="sec__head">
+        <span class="sec__no mono">§05</span>
+        <h2>Disclosure channel</h2>
+      </header>
+
+      <p class="contact__intro">Have an internship, a project or a hard problem? Report it here. Response time is <em>fast</em>.</p>
+
+      <div class="mailrow">
+        <a class="mail" href="mailto:ay.guerfi@esi-sba.dz">ay.guerfi@esi-sba.dz</a>
+        <button class="copy mono" type="button" data-copy="ay.guerfi@esi-sba.dz">Copy</button>
+      </div>
+
+      <ul class="channels mono">
+        <li><a href="https://www.linkedin.com/in/guerfi-ahmed-yacine-6831b32b8/" rel="noopener">LinkedIn / Guerfi Ahmed Yacine ↗</a></li>
+        <li><a href="https://github.com/N4khlA" rel="noopener">GitHub / N4khlA ↗</a></li>
+        <li><a href="mailto:ay.guerfi@esi-sba.dz?subject=Internship%20opportunity">Email about an internship ↗</a></li>
+      </ul>
+
+      <div class="signoff">
+        <p class="mono signoff__k">Signed</p>
+        <p class="sig">Guerfi Ahmed Yacine</p>
+        <svg class="sig__line" viewBox="0 0 320 24" aria-hidden="true"><path d="M4 16 C 60 4, 110 22, 170 12 S 270 6, 316 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>End of report · GAY-2026-001</span>
+    <span>Hand-built: HTML, CSS and a little JS</span>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
