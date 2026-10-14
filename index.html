@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
   <script>
     document.documentElement.classList.add('js');
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -90,7 +90,8 @@
 
       <div class="cover__actions">
         <a class="cover__next mono" href="#summary">Begin report <span aria-hidden="true">↓</span></a>
-        <button class="export mono" type="button" data-export>Export report (PDF)</button>
+        <a class="export export--solid mono" href="Guerfi_Ahmed_Yacine_CV.pdf" download>Download CV (PDF)</a>
+        <button class="export mono" type="button" data-export>Export full report</button>
       </div>
     </section>
 
@@ -355,6 +356,7 @@
       </div>
 
       <ul class="channels mono">
+        <li><a href="Guerfi_Ahmed_Yacine_CV.pdf" download>Download CV (PDF) ↓</a></li>
         <li><a href="https://www.linkedin.com/in/guerfi-ahmed-yacine-6831b32b8/" rel="noopener">LinkedIn / Guerfi Ahmed Yacine ↗</a></li>
         <li><a href="https://github.com/N4khlA" rel="noopener">GitHub / N4khlA ↗</a></li>
         <li><a href="mailto:ay.guerfi@esi-sba.dz?subject=Internship%20opportunity">Email about an internship ↗</a></li>
@@ -383,6 +385,6 @@
     <p class="palette__hint mono">↑↓ to move · Enter to run</p>
   </dialog>
 
-  <script src="main.js?v=3" defer></script>
+  <script src="main.js?v=4" defer></script>
 </body>
 </html>

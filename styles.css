@@ -294,6 +294,9 @@ kbd { font: 500 11px var(--mono); padding: 1px 5px; border: 1px solid currentCol
   transition: background-color .15s, color .15s;
 }
 .export:hover { background: var(--ink); color: var(--paper); }
+.export { display: inline-flex; align-items: center; text-decoration: none; }
+.export--solid { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.export--solid:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
 /* ---------- print: export as a clean PDF report ---------- */
 @page { size: A4; margin: 16mm 14mm; }
