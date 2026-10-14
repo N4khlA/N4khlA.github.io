@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guerfi Ahmed Yacine — CV</title>
+<style>
+  @page { size: A4; margin: 10mm 13mm 9mm; }
+  :root { --ink: #111; --ink2: #333; --muted: #666; --rule: #111; --hair: #c9c9c9; --accent: #c4320d; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; color: var(--ink); font: 9.2pt/1.36 "Liberation Sans", Arial, Helvetica, sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; }
+
+  header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 12px; padding-bottom: 8px; border-bottom: 2.5px solid var(--rule); }
+  h1 { margin: 0; font-size: 23pt; line-height: 1; letter-spacing: -.02em; font-weight: 700; }
+  h1 span { color: var(--accent); }
+  .role { margin: 5px 0 0; font-size: 10.5pt; font-weight: 700; }
+  .status { display: inline-block; margin-top: 5px; font-size: 7.6pt; letter-spacing: 0; text-transform: uppercase; color: var(--accent); border: 1.5px solid var(--accent); padding: 1px 6px; }
+  .contact { text-align: right; font-size: 8.6pt; line-height: 1.55; }
+
+  h2 { margin: 10px 0 5px; font-size: 9pt; letter-spacing: 0; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; width: 8px; height: 8px; background: var(--accent); }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--hair); }
+
+  .summary { margin: 7px 0 0; color: var(--ink2); }
+
+  .entry { margin-bottom: 6px; break-inside: avoid; }
+  .entry__top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .entry h3 { margin: 0; font-size: 10.3pt; }
+  .entry h3 small { font-weight: 400; color: var(--muted); font-size: 8.6pt; }
+  .meta { font-size: 8.4pt; color: var(--muted); white-space: nowrap; }
+  .sub { margin: 1px 0 3px; font-size: 8.6pt; color: var(--ink2); }
+  ul { margin: 2px 0 0; padding-left: 14px; }
+  li { margin: 1px 0; color: var(--ink2); }
+  li::marker { color: var(--accent); }
+  b { color: var(--ink); }
+  .stack { margin: 2px 0 0; font-size: 8pt; color: var(--muted); }
+
+  .skills { display: grid; grid-template-columns: 118px 1fr; gap: 3px 12px; margin: 0; }
+  .skills dt { font-weight: 700; font-size: 9pt; }
+  .skills dd { margin: 0; color: var(--ink2); }
+
+  footer { margin-top: 8px; padding-top: 5px; border-top: 1px solid var(--hair); font-size: 7.6pt; color: var(--muted); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Guerfi Ahmed Yacine<span>.</span></h1>
+      <p class="role">Cyber Security Engineering Student</p>
+      <span class="status mono">Available for internship · 2026–27</span>
+    </div>
+    <div class="contact">
+      <a href="mailto:ay.guerfi@esi-sba.dz">ay.guerfi@esi-sba.dz</a><br>
+      <a href="https://n4khla.github.io">n4khla.github.io</a><br>
+      <a href="https://github.com/N4khlA">github.com/N4khlA</a><br>
+      <a href="https://www.linkedin.com/in/guerfi-ahmed-yacine-6831b32b8/">linkedin.com/in/guerfi-ahmed-yacine-6831b32b8</a>
+    </div>
+  </header>
+
+  <p class="summary">Final-year cyber security engineering student at ESI Sidi Bel Abbès. I learn security by building the vulnerable system, exploiting it, instrumenting it and then proving the fix. I have shipped three open-source tools covering web exploitation, ML-based intrusion detection and mobile static analysis. I'm looking for an internship in penetration testing, application security or SOC / detection engineering.</p>
+
+  <h2 data-n="01">Education</h2>
+  <div class="entry">
+    <div class="entry__top">
+      <h3>École Supérieure en Informatique (ESI-SBA) <small>· Sidi Bel Abbès, Algeria</small></h3>
+      <span class="meta">Expected 2027</span>
+    </div>
+    <p class="sub">State Engineering Degree in Computer Science, Cyber Security specialisation, and Master’s Degree</p>
+    <ul>
+      <li>Final year: offensive and defensive security coursework, hands-on ethical hacking labs, end-of-studies project</li>
+    </ul>
+  </div>
+
+  <h2 data-n="02">Security projects</h2>
+
+  <div class="entry">
+    <div class="entry__top">
+      <h3>Race Condition Exploiter <small>· Offensive / Web</small></h3>
+      <span class="meta mono">github.com/N4khlA/Race_condition_exploiter</span>
+    </div>
+    <ul>
+      <li>Built a full-stack TOCTOU training lab with <b>5 real race-condition vulnerabilities</b> (double-spend transfers, coupon reuse, overselling, duplicate signup, reset-token reuse) behind a working storefront</li>
+      <li>Wrote an exploit harness with <b>4 concurrency strategies</b>: asyncio, barrier-synced threads, raw TCP sockets and HTTP/2 single-connection multiplexing</li>
+      <li>Implemented <b>3 detectors</b> (request-window grouping, PostgreSQL invariant triggers via LISTEN/NOTIFY, burst fingerprinting) and toggleable fixes (CAS, row locks, serializable, Redis locks), benchmarked for exploit rate against latency and deadlocks</li>
+    </ul>
+    <p class="stack mono">FastAPI · PostgreSQL · Redis · React + TypeScript · WebSocket · Docker Compose</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry__top">
+      <h3>ML Network Intrusion Detection <small>· Defensive / ML</small></h3>
+      <span class="meta mono">github.com/N4khlA/AI-_threat_hunting</span>
+    </div>
+    <ul>
+      <li>Trained a grid-searched Random Forest (<b>macro F1 0.948</b>) and a bidirectional LSTM (<b>AUC 0.998</b>) on UNSW-NB15 to detect DoS, scans, exploits, fuzzing and botnet traffic</li>
+      <li>Compared the models with a McNemar significance test, ran a leakage scan and per-attack-family recall, and documented the weak spots</li>
+      <li>Served predictions via FastAPI (<b>~700k flows/s</b> on CPU), added a live Streamlit monitor and a retraining pipeline that refuses to replace the current model with a worse one, all covered by <b>49 tests</b></li>
+    </ul>
+    <p class="stack mono">Python · scikit-learn · TensorFlow · FastAPI · Streamlit · SQLite · pytest</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry__top">
+      <h3>masa: Mobile App Security Analyzer <small>· AppSec / Mobile</small></h3>
+      <span class="meta mono">github.com/N4khlA/MobileApp_SecAnalyzer</span>
+    </div>
+    <ul>
+      <li>Built a static scanner for Android APKs and iOS IPAs that scores apps against the <b>OWASP Mobile Top 10 (2023)</b>, M1–M10</li>
+      <li>Wrote <b>dependency-free parsers</b> for binary AXML, binary plist, DEX string tables, ELF and Mach-O, including hardening checks (PIE, RELRO, executable stack)</li>
+      <li>Detects hardcoded secrets, TrustAll managers, ATS bypasses, weak crypto and insecure storage, and generates HTML, Markdown and JSON reports</li>
+    </ul>
+    <p class="stack mono">Python standard library · OWASP MASVS · ELF / Mach-O · MIT licence</p>
+  </div>
+
+  <h2 data-n="03">Technical skills</h2>
+  <dl class="skills">
+    <dt>Offensive</dt><dd>Web exploitation, race conditions / TOCTOU, custom exploit tooling, HTTP/2 and raw-socket attacks</dd>
+    <dt>Defensive</dt><dd>ML-based intrusion detection, detection signals and triggers, model evaluation and drift monitoring</dd>
+    <dt>AppSec</dt><dd>OWASP Top 10 and Mobile Top 10, static analysis, binary hardening, concurrency-safe database fixes</dd>
+    <dt>Languages</dt><dd>Python, TypeScript, SQL</dd>
+    <dt>Tools &amp; platforms</dt><dd>FastAPI, React, PostgreSQL, Redis, Docker, Linux (Kali), Git, pytest, scikit-learn, TensorFlow</dd>
+  </dl>
+
+  <footer class="mono">
+    <span>Full portfolio and source code: n4khla.github.io</span>
+    <span>Rev. 2026-10</span>
+  </footer>
+</body>
+</html>
