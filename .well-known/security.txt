@@ -1,0 +1,8 @@
+# Security contact for n4khla.github.io (RFC 9116)
+# Found something on this site or in one of my repos? Thank you, please tell me.
+Contact: mailto:ay.guerfi@esi-sba.dz
+Expires: 2027-10-14T00:00:00.000Z
+Preferred-Languages: en, fr, ar
+Canonical: https://n4khla.github.io/.well-known/security.txt
+Policy: https://github.com/N4khlA
+# Also: I'm a cyber security engineering student looking for an internship.
