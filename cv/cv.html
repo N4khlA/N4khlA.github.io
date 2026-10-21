@@ -109,7 +109,7 @@
     <ul>
       <li>Built a static scanner for Android APKs and iOS IPAs with <b>78 rules</b> across the <b>OWASP Mobile Top 10 (2023)</b>, M1–M10</li>
       <li>Wrote <b>dependency-free parsers</b> for binary AXML, binary plist, DEX string tables, ELF and Mach-O, including hardening checks (PIE, RELRO, executable stack)</li>
-      <li>Added <b>SARIF output</b> for GitHub code scanning and a severity gate that fails CI builds; tested on Python 3.9–3.13 with <b>67 tests</b></li>
+      <li>Added <b>SARIF output</b> for GitHub code scanning and a severity gate that fails CI builds; tested on Python 3.10–3.14 with <b>67 tests</b></li>
       <li>Found and fixed a coverage gap: a forged zip entry made the scanner silently skip <code>classes.dex</code> and hide <b>18 of 38 findings</b>; every unanalysed file is now reported</li>
     </ul>
     <p class="stack mono">Python standard library · OWASP MASVS · SARIF · GitHub Actions · MIT licence</p>
