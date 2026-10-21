@@ -212,7 +212,7 @@
             <span class="chip chip--ok">Status · Shipped</span>
           </div>
           <h3><a href="https://github.com/N4khlA/MobileApp_SecAnalyzer" rel="noopener">masa: Mobile App Security Analyzer</a></h3>
-          <p class="finding__desc">A static scanner for Android APKs and iOS IPAs that maps findings to the OWASP Mobile Top 10 (2023). It uses only the Python standard library, so every binary format parser is hand-written.</p>
+          <p class="finding__desc">A static scanner for Android APKs and iOS IPAs with 78 rules across the OWASP Mobile Top 10 (2023). It uses only the Python standard library, so every binary format parser is hand-written, and it plugs into CI with SARIF output and a severity gate.</p>
 
           <div class="cols">
             <div>
@@ -223,18 +223,18 @@
               </ul>
             </div>
             <div>
-              <h4 class="mono">Coverage</h4>
+              <h4 class="mono">In the pipeline</h4>
               <ul class="ticks">
-                <li>Secrets, TrustAll managers, ATS bypasses, weak crypto, insecure storage</li>
-                <li>Credits positive controls (Keystore, Keychain, pinning); HTML/MD/JSON reports</li>
+                <li>SARIF for GitHub code scanning; <code>--fail-on</code> breaks the build on serious findings</li>
+                <li>Never drops a file silently: forged, corrupt or oversized entries are reported, and <code>--strict</code> fails the scan</li>
               </ul>
             </div>
           </div>
-          <p class="stack mono">Python stdlib · OWASP MASVS · ELF / Mach-O · MIT</p>
+          <p class="stack mono">Python stdlib · OWASP MASVS · SARIF · GitHub Actions · MIT</p>
         </div>
         <dl class="evidence">
-          <div><dt class="mono">10</dt><dd>OWASP categories</dd></div>
-          <div><dt class="mono">2</dt><dd>platforms</dd></div>
+          <div><dt class="mono">78</dt><dd>detection rules</dd></div>
+          <div><dt class="mono">67</dt><dd>tests</dd></div>
           <div><dt class="mono">0</dt><dd>dependencies</dd></div>
         </dl>
       </article>
