@@ -59,7 +59,7 @@
     </div>
   </header>
 
-  <p class="summary">Final-year cyber security engineering student at ESI Sidi Bel Abbès. I learn security by building the vulnerable system, exploiting it, instrumenting it and then proving the fix. I have shipped three open-source tools covering web exploitation, ML-based intrusion detection and mobile static analysis. I'm looking for an internship in penetration testing, application security or SOC / detection engineering.</p>
+  <p class="summary">Final-year cyber security engineering student at ESI Sidi Bel Abbès. I learn security by building the vulnerable system, exploiting it, instrumenting it and then proving the fix. I have shipped three open-source tools covering web exploitation, ML-based intrusion detection and mobile static analysis. I'm looking for a final-year (PFE) research internship in ML security, intrusion detection or application security.</p>
 
   <h2 data-n="01">Education</h2>
   <div class="entry">
@@ -77,6 +77,21 @@
 
   <div class="entry">
     <div class="entry__top">
+      <h3>ML Network Intrusion Detection <small>· Defensive / ML</small></h3>
+      <span class="meta mono">github.com/N4khlA/AI-_threat_hunting</span>
+    </div>
+    <p class="sub">Technical report (6 pp.): <a href="https://github.com/N4khlA/AI-_threat_hunting/blob/main/docs/report/report.pdf"><b><i>Leakage, Poisoning and Evasion: Auditing a Machine-Learning Intrusion Detector on UNSW-NB15</i></b></a></p>
+    <ul>
+      <li>Audited my own evaluation across 5 split protocols with bootstrap CIs: duplicates leaking across a random split inflated macro-F1 from <b>0.818 to 0.948</b>, and a BiLSTM&rsquo;s apparent lead disappeared with the leak (McNemar p = 0.27)</li>
+      <li>Poisoned the retraining loop through an unauthenticated label field: <b>2% poisoned rows cut Backdoor recall from 1.00 to 0.67</b> while accuracy rose; added a per-family guard that refuses such models</li>
+      <li>Black-box evasion: one attacker-chosen TTL value evaded the plain model on <b>100%</b> of detected attacks; removing the TTL shortcut and adversarial training cut evasion to <b>&le; 3.3%</b> for 0.005 F1</li>
+      <li>Served behind a hardened FastAPI API (role keys, strict schema, SHA-256 artifact pinning) with SOC-ready ATT&amp;CK alerts; <b>108 tests</b>, bandit and pip-audit in CI</li>
+    </ul>
+    <p class="stack mono">Python · scikit-learn · TensorFlow · FastAPI · pytest · LaTeX</p>
+  </div>
+
+  <div class="entry">
+    <div class="entry__top">
       <h3>Race Condition Exploiter <small>· Offensive / Web</small></h3>
       <span class="meta mono">github.com/N4khlA/Race_condition_exploiter</span>
     </div>
@@ -86,19 +101,6 @@
       <li>Implemented <b>3 detectors</b> (request-window grouping, PostgreSQL invariant triggers via LISTEN/NOTIFY, burst fingerprinting) and toggleable fixes (CAS, row locks, serializable, Redis locks), benchmarked for exploit rate against latency and deadlocks</li>
     </ul>
     <p class="stack mono">FastAPI · PostgreSQL · Redis · React + TypeScript · WebSocket · Docker Compose</p>
-  </div>
-
-  <div class="entry">
-    <div class="entry__top">
-      <h3>ML Network Intrusion Detection <small>· Defensive / ML</small></h3>
-      <span class="meta mono">github.com/N4khlA/AI-_threat_hunting</span>
-    </div>
-    <ul>
-      <li>Trained a grid-searched Random Forest (<b>macro F1 0.948</b>) and a bidirectional LSTM (<b>AUC 0.998</b>) on UNSW-NB15 to detect DoS, scans, exploits, fuzzing and botnet traffic</li>
-      <li>Compared the models with a McNemar significance test, ran a leakage scan and per-attack-family recall, and documented the weak spots</li>
-      <li>Served predictions via FastAPI (<b>~700k flows/s</b> on CPU), added a live Streamlit monitor and a retraining pipeline that refuses to replace the current model with a worse one, all covered by <b>49 tests</b></li>
-    </ul>
-    <p class="stack mono">Python · scikit-learn · TensorFlow · FastAPI · Streamlit · SQLite · pytest</p>
   </div>
 
   <div class="entry">
@@ -126,7 +128,7 @@
 
   <footer class="mono">
     <span>Full portfolio and source code: n4khla.github.io</span>
-    <span>Rev. 2026-10</span>
+    <span>Rev. 2026-11</span>
   </footer>
 </body>
 </html>
